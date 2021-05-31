@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_014802) do
+ActiveRecord::Schema.define(version: 2021_05_27_195651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "activities", force: :cascade do |t|
+  create_table "actions", force: :cascade do |t|
     t.string "title", null: false
-    t.string "icon"
-    t.datetime "last_instance", null: false
-    t.integer "goal"
-    t.integer "goal_unit"
+    t.string "icon", null: false
+    t.datetime "last_execution", null: false
     t.boolean "show_icon", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
