@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Prior, type: :model do
-  describe "#days" do
+  describe "#days_since_date" do
     it "will return number of days since the event" do
       prior_event = create(:prior_event)
       expect(prior_event.prior.days).to equal(5)

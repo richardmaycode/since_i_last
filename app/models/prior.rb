@@ -7,7 +7,7 @@ class Prior < ApplicationRecord
   # Callbacks
   after_create :create_default_goal
 
-  def days
+  def days_since_date
     (Time.zone.now.to_date - event.date.to_date).to_i
   end
 
