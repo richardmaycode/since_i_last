@@ -1,3 +1,4 @@
 <%= tag.h1 "I am waiting for..." %>
 
-<%= render partial: "future", collection: @futures %>
+<%= render partial: "future", collection: @futures if @futures.any? %>
+<%= render partial: "shared/empty_list", locals: { items: "future events" } unless @futures.any? %>
