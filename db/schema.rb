@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_195651) do
+ActiveRecord::Schema.define(version: 2021_06_02_020835) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,35 @@ ActiveRecord::Schema.define(version: 2021_05_27_195651) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "icon"
+    t.datetime "date"
+    t.string "eventable_type"
+    t.bigint "eventable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["eventable_type", "eventable_id"], name: "index_events_on_eventable_type_and_eventable_id"
+  end
+
+  create_table "futures", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.integer "amount"
+    t.integer "unit"
+    t.bigint "prior_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prior_id"], name: "index_goals_on_prior_id"
+  end
+
+  create_table "priors", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "goals", "priors"
 end
