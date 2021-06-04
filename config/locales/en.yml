@@ -30,4 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit: 
+      event:
+        future:
+          create: "Create Countdown"
+          update: "Update Countdown"
+        prior:
+          create: "Create Item"
+          update: "Update Item"

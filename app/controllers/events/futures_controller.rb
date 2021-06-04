@@ -1,4 +1,6 @@
 class Events::FuturesController < ApplicationController
+  before_action :set_event, only: %w[show edit update destroy]
+
   def index
     @futures = Event.futures.all
   end
@@ -7,6 +9,7 @@ class Events::FuturesController < ApplicationController
   end
 
   def new
+    @event = Event.new(eventable: Future.new)
   end
 
   def create
@@ -22,4 +25,8 @@ class Events::FuturesController < ApplicationController
   end
 
   private
+
+  def set_event
+    @event = Future.find(params[:id]).event
+  end
 end

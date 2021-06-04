@@ -1,4 +1,6 @@
-<%= tag.h1 "I am waiting for..." %>
+<%= tag.h1 "I'm counting the days until" %>
 
 <%= render partial: "future", collection: @futures if @futures.any? %>
 <%= render partial: "shared/empty_list", locals: { items: "future events" } unless @futures.any? %>
+
+<%= link_to "Create countdown", [:new, :events, :future] %>

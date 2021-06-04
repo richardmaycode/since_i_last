@@ -1,0 +1,9 @@
+<%= form_with(model: @event, url: new_events_future_path) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "The new transforms movie" %>
+
+  <%= f.label :date %>
+  <%= f.datetime_field :date %>
+
+  <%= f.submit(@event.new_record? ? t("helpers.submit.event.future.create") : t("helpers.submit.event.future.update")) %>
+<% end %>

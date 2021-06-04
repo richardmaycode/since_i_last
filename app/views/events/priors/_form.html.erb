@@ -1,0 +1,15 @@
+<%= form_with(model: @event, url: events_priors_url) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, placeholder: "The new transforms movie" %>
+
+  <%= f.label :date %>
+  <%= f.datetime_field :date %>
+  <%= f.hidden_field :eventable, value: Prior.new %>
+  <%= f.submit(@event.new_record? ? t("helpers.submit.event.prior.create") : t("helpers.submit.event.prior.update")) %>
+<% end %>
+
+<% if @event.errors.any? %>
+  <%= @event.errors.each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
