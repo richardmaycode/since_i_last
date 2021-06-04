@@ -3,7 +3,6 @@ class CreateEvents < ActiveRecord::Migration[6.1]
     create_table :events do |t|
       t.string :title
       t.string :icon
-      t.datetime :date
       t.string :eventable_type
       t.bigint :eventable_id
 
