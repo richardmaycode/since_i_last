@@ -16,6 +16,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'turbo-rails'
 gem 'faker'
 gem 'rexml', '~> 3.2', '>= 3.2.4'
+gem "view_component", require: "view_component/engine"
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

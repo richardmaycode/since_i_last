@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_06_04_161324) do
 
   create_table "countdowns", force: :cascade do |t|
     t.string "title", null: false
+    t.string "icon"
+    t.string "color", null: false
     t.datetime "event_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

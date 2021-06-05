@@ -1,0 +1,4 @@
+<%= tag.article id: dom_id(@countdown) do %>
+  <%= tag.h2 @countdown.title %>
+  <%= tag.p pluralize(@countdown.days_until_event_date, "days") %>
+<% end %>

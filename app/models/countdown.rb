@@ -1,4 +1,7 @@
 class Countdown < ApplicationRecord
+  # Constants
+  BG_COLORS = %w[red orange green blue purple].freeze
+
   # Associations
   # Validations
   validates :title, presence: true
@@ -6,6 +9,11 @@ class Countdown < ApplicationRecord
   validate :event_date_not_in_the_past, on: :create
 
   # Scopes
+  scope :complete, -> { where("event_date <= ?", Time.zone.now) }
+  scope :incomplete, -> { where("event_date > ?", Time.zone.now) }
+
+  # Callbacks
+  before_create :assign_color
 
   # Methods
   def event_date_not_in_the_past
@@ -19,5 +27,13 @@ class Countdown < ApplicationRecord
     return 0 if event_date < current_date
 
     (event_date.to_date - current_date).to_i
+  end
+
+  def complete?
+    days_until_event_date == 0
+  end
+
+  def assign_color
+    self.color = BG_COLORS[rand(0..(BG_COLORS.count - 1))]
   end
 end

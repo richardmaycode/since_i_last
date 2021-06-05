@@ -19,4 +19,26 @@ RSpec.describe Countdown, type: :model do
       end
     end
   end
+
+  describe "#complete?" do
+    context "if event_date is in the future" do
+      it "returns false" do
+        expect(subject.complete?).to eq(false)
+      end
+    end
+
+    context "if event_date is today or in the past" do
+      it "returns true" do
+        subject.update(event_date: Time.zone.now - 2.days)
+        expect(subject.complete?).to eq(true)
+      end
+    end
+  end
+
+  describe "#assign_color" do
+    it "will pick a random color from BG_COLORS" do
+      subject.assign_color
+      expect(Countdown::BG_COLORS).to include(subject.color)
+    end
+  end
 end

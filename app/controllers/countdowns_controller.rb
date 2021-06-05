@@ -1,5 +1,6 @@
 class CountdownsController < ApplicationController
   def index
+    @countdowns = Countdown.all
   end
 
   def show

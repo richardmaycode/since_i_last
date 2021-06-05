@@ -1,0 +1,12 @@
+<%= tag.main do %>
+  <%= tag.div class: "page__content" do %>
+    <%= tag.div class: "sheet" do %>
+      <%= header %>
+      <%= tag.section class: "countdowns" do %>
+        <% countdowns.each do |c| %>
+          <%= c %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

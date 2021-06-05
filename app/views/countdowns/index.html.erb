@@ -1,2 +1,6 @@
-<h1>Countdowns#index</h1>
-<p>Find me in app/views/countdowns/index.html.erb</p>
+<%= render PageComponent.new do |page| %>
+  <% page.header(title: "My Countdowns") %>
+  <%= @countdowns.each do |countdown| %>
+    <%= page.countdown(countdown: countdown) %>
+  <% end %>
+<% end %>
