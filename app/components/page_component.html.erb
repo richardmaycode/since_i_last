@@ -1,12 +1,18 @@
-<%= tag.main do %>
+<%= tag.main class: "page" do %>
   <%= tag.div class: "page__content" do %>
     <%= tag.div class: "sheet" do %>
       <%= header %>
-      <%= tag.section class: "countdowns" do %>
-        <% countdowns.each do |c| %>
-          <%= c %>
+      <%= tag.section id: "incomplete-countdowns", class: "page__section" do %>
+        <% incomplete_countdowns.each do |incomplete| %>
+          <%= incomplete %>
         <% end %>
       <% end %>
+      <%= tag.h2 "Complete" %>
+      <%= tag.section id: "complete-countdowns", class: "page__section" do %>
+        <% complete_countdowns.each do |complete| %>
+          <%= complete %>
+        <% end %>
+      <% end %>      
     <% end %>
   <% end %>
 <% end %>

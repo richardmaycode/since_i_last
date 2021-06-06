@@ -1,1 +1,8 @@
-<%= tag.h1 @title %>
+<%= tag.header class: "page__header u-relative" do %>
+  <%= tag.h1 @title, class: "aligncenter" %>
+  <%= tag.div class: "sheet-actions" do %>
+    <% actions.each do |action| %>
+      <%= action %>
+    <% end %>
+  <% end %>
+<% end %>

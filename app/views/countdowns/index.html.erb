@@ -1,6 +1,13 @@
 <%= render PageComponent.new do |page| %>
-  <% page.header(title: "My Countdowns") %>
-  <%= @countdowns.each do |countdown| %>
-    <%= page.countdown(countdown: countdown) %>
+  <% page.header(title: "My Countdowns") do |header| %>
+    <% header.actions([
+      { name: "+ New", href: new_countdown_path }
+    ])%>
+  <% end %>
+  <%= @countdowns.incomplete.each do |incomplete| %>
+    <%= page.incomplete_countdown(countdown: incomplete) %>
+  <% end %>
+  <%= @countdowns.complete.each do |complete| %>
+    <%= page.complete_countdown(countdown: complete) %>
   <% end %>
 <% end %>

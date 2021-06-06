@@ -1,4 +1,8 @@
-<%= tag.article id: dom_id(@countdown) do %>
-  <%= tag.h2 @countdown.title %>
-  <%= tag.p pluralize(@countdown.days_until_event_date, "days") %>
+<%= tag.article id: dom_id(@countdown), class: "countdown-block countdown-block__#{@countdown.color}" do %>
+  <%= tag.div class: "countdown-block__title" do %>
+    <%= tag.h3 @countdown.title %>
+  <% end %>
+  <%= tag.div class: "countdown-block__days" do %>
+    <%= tag.p pluralize(@countdown.days_until_event_date, "days") %>
+  <% end %>
 <% end %>

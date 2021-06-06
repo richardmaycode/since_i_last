@@ -1,2 +1,5 @@
-<h1>Countdowns#new</h1>
-<p>Find me in app/views/countdowns/new.html.erb</p>
+<%= render Pages::FormPageComponent.new do |p| %>
+  <%= p.header(title: "New Countdown") %>
+  <%= form_with(model: @countdown) do |f| %>
+  <% end %>
+<% end %>
