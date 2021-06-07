@@ -1,5 +1,5 @@
 class Countdown < ApplicationRecord
-  # Constants
+  # Includes
   BG_COLORS = %w[red orange green blue purple].freeze
 
   # Associations
