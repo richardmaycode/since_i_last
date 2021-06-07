@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_013434) do
+ActiveRecord::Schema.define(version: 2021_06_07_161440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,17 +18,26 @@ ActiveRecord::Schema.define(version: 2021_06_07_013434) do
   create_table "countdowns", force: :cascade do |t|
     t.string "title", null: false
     t.string "icon"
-    t.string "color", null: false
+    t.integer "color", null: false
     t.datetime "event_date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "goals", force: :cascade do |t|
+    t.integer "amount", default: 0, null: false
+    t.integer "goal_type", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "watches", force: :cascade do |t|
-    t.string "title"
-    t.string "icon"
+    t.string "title", null: false
+    t.string "icon", default: "test", null: false
     t.integer "color"
-    t.datetime "executed"
+    t.datetime "executed", null: false
+    t.integer "goal", default: 0, null: false
+    t.integer "goal_type", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

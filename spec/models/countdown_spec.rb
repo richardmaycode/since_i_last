@@ -38,7 +38,7 @@ RSpec.describe Countdown, type: :model do
   describe "#assign_color" do
     it "will pick a random color from BG_COLORS" do
       subject.assign_color
-      expect(Countdown::BG_COLORS).to include(subject.color)
+      expect(Countdown.colors.keys).to include(subject.color)
     end
   end
 end

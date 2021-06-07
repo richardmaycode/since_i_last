@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe Watch, type: :model do
   before(:all) do
@@ -17,6 +17,36 @@ RSpec.describe Watch, type: :model do
   describe "#days_since_execution" do
     it "returns number of days based on current date" do
       expect(create(:watch, executed: @past_date).days_since_execution).to eq(3)
+    end
+  end
+
+  describe "#goal_date" do
+    it "returns the date when the goal will be reached" do
+      watch = create(:watch, executed: @past_date)
+      expect(watch.goal_date).to eq(watch.executed)
+    end
+  end
+
+  describe "#days_remaining" do
+    context "when goal == 0" do
+      it "returns 0" do
+        watch = create(:watch)
+        expect(watch.days_remaining).to eq(0)
+      end
+    end
+
+    context "when goal_date < Today" do
+      it "returns 0" do
+        watch = create(:watch, executed: Time.zone.now - 15.days, goal: 4)
+        expect(watch.days_remaining).to eq(0)
+      end
+    end
+
+    context "when goal_date > Today" do
+      it "returns number of days remaining" do
+        watch = create(:watch, executed: Time.zone.now - 5, goal: 15)
+        expect(watch.days_remaining).to be > 0
+      end
     end
   end
 end

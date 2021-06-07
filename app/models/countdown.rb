@@ -2,6 +2,8 @@ class Countdown < ApplicationRecord
   # Includes
   BG_COLORS = %w[red orange green blue purple].freeze
 
+  enum color: BG_COLORS
+
   # Associations
   # Validations
   validates :title, presence: true
