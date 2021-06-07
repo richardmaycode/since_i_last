@@ -1,0 +1,11 @@
+  <%= form_with(model: countdown) do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, required: true, placeholder: "eg: Spiderman: No Way Home" %>
+    <br>
+    <%= f.label :event_date, "Date" %>
+    <%= f.date_field :event_date %>
+    <%= tag.div class: "form-actions" do %>
+      <%= link_to "Cancel", countdown.new_record? ? [:countdowns] : countdown %>
+      <%= f.submit %>
+    <% end %>    
+  <% end %>

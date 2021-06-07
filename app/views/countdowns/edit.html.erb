@@ -1,2 +1,6 @@
-<h1>Countdowns#edit</h1>
-<p>Find me in app/views/countdowns/edit.html.erb</p>
+<%= render Pages::FormPageComponent.new do |p| %>
+  <%= p.header(title: "Edit Countdown") %>
+  <%= p.form do %>
+    <%= render partial: "form", locals: { countdown: @countdown} %>
+  <% end %>
+<% end %>

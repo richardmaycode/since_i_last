@@ -36,7 +36,7 @@ module SinceILast
     config.generators.system_tests = nil
 
     config.generators do |g|
-      g.text_framework :rspec,
+      g.test_framework :rspec,
         fixtures:         false,
         view_specs:       false,
         helper_specs:     false,

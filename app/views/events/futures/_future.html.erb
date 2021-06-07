@@ -1,8 +1,0 @@
-<%= tag.article id: dom_id(future) do %>
-  <%= tag.h2 future.title %>
-  <%= tag.p "event date: #{future.date.to_date}" %>
-  <%= tag.div class: "days_block" do %>
-    <%= tag.p future.future.days_till_date, class: "days_block__count"  %>
-    <%= tag.p 'day'.pluralize(future.future.days_till_date), class: "days_block__label"  %> 
-  <% end %>
-<% end %>

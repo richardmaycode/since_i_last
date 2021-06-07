@@ -1,8 +1,0 @@
-<%= tag.article id: dom_id(prior) do %>
-  <%= tag.h2 prior.title %>
-  <%= tag.p "Since: #{prior.date.to_date}" %>
-  <%= tag.div class: "days_block" do %>
-    <%= tag.p prior.prior.days_since_date, class: "days_block__count"  %>
-    <%= tag.p 'day'.pluralize(prior.prior.days_since_date), class: "days_block__label"  %> 
-  <% end %>
-<% end %>

@@ -1,5 +1,6 @@
 <%= render Pages::FormPageComponent.new do |p| %>
   <%= p.header(title: "New Countdown") %>
-  <%= form_with(model: @countdown) do |f| %>
+  <%= p.form do %>
+    <%= render partial: "form", locals: { countdown: @countdown} %>
   <% end %>
 <% end %>

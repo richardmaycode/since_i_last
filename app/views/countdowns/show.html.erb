@@ -1,2 +1,28 @@
-<h1>Countdowns#show</h1>
-<p>Find me in app/views/countdowns/show.html.erb</p>
+<%= tag.main class: "page" do %>
+  <%= tag.div class: "page__content" do %>
+    <%= tag.div class: "sheet" do %>
+      <%= render Page::HeaderComponent.new(title: "Countdown Details") do |header| %>
+        <%= header.actions([{name: "Edit", href: edit_countdown_path }]) %>
+      <% end %>
+      <%= tag.section id: "details", class: "page__section" do %>
+        <% tag.dl do %>
+          <%= tag.dt "Title" %>
+          <%= tag.dd @countdown.title %>
+          <%= tag.dt "Event Date" %>
+          <%= tag.dd @countdown.event_date.strftime("%Y-%m-%d") %>
+          <%= tag.dt "Countdown Color" %>
+          <%= tag.dd @countdown.color.titleize %>
+        <% end %>
+      <% end %>
+      <%= tag.section class: "page__section" do %>
+        <%= tag.div class: "sheet__footer" do %>
+          <%= tag.ul do %>
+            <%= tag.li "Created: #{@countdown.created_at.strftime("%Y-%m-%d")}" %>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "Return to Countdowns", countdowns_path %>

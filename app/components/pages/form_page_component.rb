@@ -2,4 +2,5 @@
 
 class Pages::FormPageComponent < ViewComponent::Base
   renders_one :header, Page::HeaderComponent
+  renders_one :form
 end

@@ -5,4 +5,5 @@
   <%= tag.div class: "countdown-block__days" do %>
     <%= tag.p pluralize(@countdown.days_until_event_date, "days") %>
   <% end %>
+  <%= link_to "View", @countdown %>
 <% end %>
