@@ -4,10 +4,10 @@
       { name: "+ New", href: new_countdown_path }
     ])%>
   <% end %>
-  <%= @countdowns.incomplete.each do |incomplete| %>
+  <% @countdowns.incomplete.each do |incomplete| %>
     <%= page.incomplete_countdown(countdown: incomplete) %>
   <% end %>
-  <%= @countdowns.complete.each do |complete| %>
+  <% @countdowns.complete.each do |complete| %>
     <%= page.complete_countdown(countdown: complete) %>
   <% end %>
 <% end %>
