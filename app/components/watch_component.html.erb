@@ -1,0 +1,9 @@
+<%= tag.article id: dom_id(@watch) do %>
+  <%= tag.h3 @watch.title %>
+  <%= tag.p do %>
+    <%= pluralize(@watch.days_since_execution, "days") + " since" %>
+  <% end %>
+  <%= tag.div class: "goal-block" do %>
+    <%= "Goal: #{@watch.goal_type}" %>
+  <% end %>
+<% end %>

@@ -1,0 +1,6 @@
+<%= render PageComponent.new do |page| %>
+  <%= page.header(title: "Create Watch") %>
+  <%= page.section(id: "new_watch", classes: ["form_section"]) do %>
+    <%= render partial: "form", locals: { watch: @watch } %>
+  <% end %>
+<% end %>

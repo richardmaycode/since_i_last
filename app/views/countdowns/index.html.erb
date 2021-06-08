@@ -4,10 +4,14 @@
       { name: "+ New", href: new_countdown_path }
     ])%>
   <% end %>
-  <% @countdowns.incomplete.each do |incomplete| %>
-    <%= page.incomplete_countdown(countdown: incomplete) %>
+  <%= page.section(id: "incomplete-countdowns", classes: ["page__section"]) do %>
+    <% @countdowns.incomplete.each do |incomplete| %>
+      <%= render CountdownComponent.new(countdown: incomplete) %>
+    <% end %>
   <% end %>
-  <% @countdowns.complete.each do |complete| %>
-    <%= page.complete_countdown(countdown: complete) %>
+  <%= page.section(id: "complete_countdowns", classes: ["page_section"]) do %>
+    <% @countdowns.complete.each do |complete| %>
+      <%= render CountdownComponent.new(countdown: complete) %>
+    <% end %>
   <% end %>
 <% end %>

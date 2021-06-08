@@ -1,0 +1,12 @@
+<%= render PageComponent.new do |page| %>
+  <%= page.header(title: "My Watches") do |header| %>
+    <%= header.actions([
+      { name: "+ New", href: new_watch_path }
+    ])%>
+  <% end %>
+  <%= page.section(id: "watches", classes: ["test"]) do %>
+    <% @watches.each do |watch| %>
+      <%= render WatchComponent.new(watch: watch) %>
+    <% end %>
+  <% end %>
+<% end %>

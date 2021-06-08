@@ -1,0 +1,11 @@
+  <%= form_with(model: watch) do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, required: true, placeholder: "eg: Called Mom" %>
+    <br>
+    <%= f.label :executed, "Last time you did this action" %>
+    <%= f.date_field :executed %>
+    <%= tag.div class: "form-actions" do %>
+      <%= link_to "Cancel", watch.new_record? ? [:watches] : watch %>
+      <%= f.submit %>
+    <% end %>    
+  <% end %>

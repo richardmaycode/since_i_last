@@ -2,17 +2,9 @@
   <%= tag.div class: "page__content" do %>
     <%= tag.div class: "sheet" do %>
       <%= header %>
-      <%= tag.section id: "incomplete-countdowns", class: "page__section" do %>
-        <% incomplete_countdowns.each do |incomplete| %>
-          <%= incomplete %>
-        <% end %>
+      <% sections.each do |section| %>
+        <%= section %>
       <% end %>
-      <%= tag.h2 "Complete" %>
-      <%= tag.section id: "complete-countdowns", class: "page__section" do %>
-        <% complete_countdowns.each do |complete| %>
-          <%= complete %>
-        <% end %>
-      <% end %>      
     <% end %>
   <% end %>
 <% end %>
