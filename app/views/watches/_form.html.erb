@@ -1,11 +1,27 @@
   <%= form_with(model: watch) do |f| %>
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title, required: true, placeholder: "eg: Called Mom" %>
-    <br>
-    <%= f.label :executed, "Last time you did this action" %>
-    <%= f.date_field :executed %>
+    <%= tag.field_set do %>
+      <%= tag.legend "Details" %>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title, required: true, placeholder: "eg: Called Mom" %>
+      <br>
+      <%= f.label :executed, "Last time you did this action" %>
+      <%= f.date_field :executed %>
+    <% end %>
+    <% if !watch.new_record? %>
+      <%= tag.field_set do %>
+        <%= tag.legend "Goals" %>
+        <%= f.label :goal_type, "Type of Goal" %>
+        <%= f.select :goal_type, options_for_select(Watch.goal_types.keys.map { |k| [k.titleize, k]}) %>
+        <br>
+        <%= f.label :goal, "Number of Days" %>
+        <%= f.number_field :goal %>
+      <% end %>
+    <% end %>
     <%= tag.div class: "form-actions" do %>
-      <%= link_to "Cancel", watch.new_record? ? [:watches] : watch %>
-      <%= f.submit %>
+        <% if !watch.new_record? %>
+          <%= link_to "Delete", @watch, method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <%= link_to "Cancel", watch.new_record? ? [:watches] : watch %>
+        <%= f.submit %>
     <% end %>    
   <% end %>

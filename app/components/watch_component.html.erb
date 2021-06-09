@@ -4,6 +4,6 @@
     <%= pluralize(@watch.days_since_execution, "days") + " since" %>
   <% end %>
   <%= tag.div class: "goal-block" do %>
-    <%= "Goal: #{@watch.goal_type}" %>
+    <%= "Goal: #{@watch.goal_type.titleize}" %>
   <% end %>
 <% end %>

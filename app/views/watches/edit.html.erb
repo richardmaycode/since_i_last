@@ -1,2 +1,6 @@
-<h1>Watches#edit</h1>
-<p>Find me in app/views/watches/edit.html.erb</p>
+<%= render PageComponent.new do |page| %>
+  <%= page.header(title: "Edit Watch") %>
+  <%= page.section(id: "new_watch", classes: ["form_section"]) do %>
+    <%= render partial: "form", locals: { watch: @watch } %>
+  <% end %>
+<% end %>
