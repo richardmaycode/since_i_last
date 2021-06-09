@@ -49,4 +49,24 @@ RSpec.describe Watch, type: :model do
       end
     end
   end
+
+  describe "#goal_reached?" do
+    context "when goal_type == 'infinite'" do
+      it "returns false" do
+        expect(create(:watch).goal_reached?).to eq(false)
+      end
+    end
+
+    context "when #days_remaining > 0" do
+      it "returns false" do
+        expect(create(:watch, executed: Time.zone.now - 2.days, goal: 15, goal_type: 1).goal_reached?).to eq(false)
+      end
+    end
+
+    context "when #days_remaining <= 0 and goal_type != 'infinite'" do
+      it "returns true" do
+        expect(create(:watch, executed: Time.zone.now - 5.days, goal: 2, goal_type: 1).goal_reached?).to eq(true)
+      end
+    end
+  end
 end

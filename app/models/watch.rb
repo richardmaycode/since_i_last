@@ -43,4 +43,10 @@ class Watch < ApplicationRecord
 
     (goal_date.to_date - Time.zone.now.to_date).to_i
   end
+
+  def goal_reached?
+    return false if infinite? || days_remaining > 0
+
+    true
+  end
 end

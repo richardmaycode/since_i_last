@@ -1,2 +1,0 @@
-module Events::FuturesHelper
-end
