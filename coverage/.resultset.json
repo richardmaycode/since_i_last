@@ -1,95 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/countdown_component_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/rails_helper.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          2,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          0,
-          0,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/richardwise/Documents/RailsProjects/since_i_last/config/environment.rb": {
         "lines": [
           null,
@@ -379,26 +290,6 @@
           null
         ]
       },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/factories/countdowns.rb": {
-        "lines": [
-          1,
-          1,
-          6,
-          6,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/factories/watches.rb": {
-        "lines": [
-          1,
-          1,
-          10,
-          3,
-          null,
-          null
-        ]
-      },
       "/Users/richardwise/Documents/RailsProjects/since_i_last/config/routes.rb": {
         "lines": [
           1,
@@ -414,37 +305,13 @@
           null
         ]
       },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/support/factory_bot.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/richardwise/Documents/RailsProjects/since_i_last/app/components/countdown_component.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/header/action_component_spec.rb": {
-        "lines": [
           1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           null
@@ -456,25 +323,8 @@
           null,
           1,
           1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/page/header_component_spec.rb": {
-        "lines": [
-          1,
-          null,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -487,24 +337,7 @@
           1,
           null,
           1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/page/section_component_spec.rb": {
-        "lines": [
           1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -515,25 +348,8 @@
           null,
           1,
           1,
-          0,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/page_component_spec.rb": {
-        "lines": [
-          1,
-          null,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -545,22 +361,9 @@
           1,
           1,
           1,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/pages/form_page_component_spec.rb": {
-        "lines": [
-          1,
           null,
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null
         ]
@@ -575,78 +378,13 @@
           null
         ]
       },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/components/watch_component_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/richardwise/Documents/RailsProjects/since_i_last/app/components/watch_component.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/models/countdown_spec.rb": {
-        "lines": [
           1,
-          null,
-          1,
-          6,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
           null,
           null
         ]
@@ -674,24 +412,24 @@
           null,
           null,
           1,
-          5,
+          6,
           0,
           null,
           null,
           null,
           1,
-          4,
-          4,
+          5,
+          5,
           null,
+          3,
+          null,
+          null,
+          1,
           2,
           null,
           null,
           1,
-          2,
-          null,
-          null,
-          1,
-          6,
+          7,
           null,
           null
         ]
@@ -700,82 +438,6 @@
         "lines": [
           1,
           1,
-          null
-        ]
-      },
-      "/Users/richardwise/Documents/RailsProjects/since_i_last/spec/models/watch_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -801,17 +463,17 @@
           null,
           null,
           1,
+          10,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          1,
           9,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          8,
           null,
           null,
           1,
@@ -834,8 +496,14 @@
           null,
           null
         ]
+      },
+      "/Users/richardwise/Documents/RailsProjects/since_i_last/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1623202275
+    "timestamp": 1623204574
   }
 }

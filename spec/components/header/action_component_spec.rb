@@ -1,13 +1,12 @@
 require "rails_helper"
 
 RSpec.describe Header::ActionComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+  it "renders a link with href and name" do
+    expect(
+      render_inline(described_class.new(name: "Fancy", href: "test.com")) { }.css("a").to_html
+    ).to include(
+      "<a href=\"test.com\">Fancy</a>"
+    )
+  end
 end

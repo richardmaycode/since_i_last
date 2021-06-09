@@ -1,13 +1,9 @@
 require "rails_helper"
 
 RSpec.describe PageComponent, type: :component do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "renders a page with correct id" do
+    render_inline(described_class.new(id: "test_page")) {}
 
-  # it "renders something useful" do
-  #   expect(
-  #     render_inline(described_class.new(attr: "value")) { "Hello, components!" }.css("p").to_html
-  #   ).to include(
-  #     "Hello, components!"
-  #   )
-  # end
+    expect(rendered_component).to have_css "main[id='test_page']"
+  end
 end
