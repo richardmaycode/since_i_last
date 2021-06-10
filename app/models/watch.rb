@@ -5,6 +5,9 @@ class Watch < ApplicationRecord
   enum goal_type: GOAL_TYPES
   enum color: BG_COLORS
 
+  # Relationships
+  has_many :outcomes, dependent: :destroy
+
   # Validations
   validates :title, presence: true
   validates :executed, presence: true

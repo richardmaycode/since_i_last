@@ -1,0 +1,2 @@
+module Watch::OutcomesHelper
+end

@@ -5,6 +5,7 @@ class Countdown < ApplicationRecord
   enum color: BG_COLORS
 
   # Associations
+
   # Validations
   validates :title, presence: true
   validates :event_date, presence: true
@@ -19,9 +20,7 @@ class Countdown < ApplicationRecord
 
   # Methods
   def event_date_not_in_the_past
-    if event_date.present? && event_date < Time.zone.today
-      errors.add(:event_date, "can't be in the past")
-    end
+    errors.add(:event_date, "can't be in the past") unless event_date > Time.zone.today
   end
 
   def days_until_event_date
