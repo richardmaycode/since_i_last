@@ -1,11 +1,11 @@
-  <%= form_with(model: countdown) do |f| %>
-    <%= f.label :title, "Title" %>
-    <%= f.text_field :title, required: true, placeholder: "eg: Spiderman: No Way Home" %>
+  <%= form_with(model: countdown, class: "form") do |f| %>
+    <%= f.label :title, "Title", class: "form__label" %>
+    <%= f.text_field :title, class: "form__input", placeholder: "eg: Spiderman: No Way Home", required: true, enterkeyhint: "next", autocomplete: "off", autofocus: true %>
     <br>
-    <%= f.label :event_date, "Date" %>
-    <%= f.date_field :event_date %>
-    <%= tag.div class: "form-actions" do %>
-      <%= link_to "Cancel", countdown.new_record? ? [:countdowns] : countdown %>
-      <%= f.submit %>
+    <%= f.label :event_date, "Date", class: "form__label" %>
+    <%= f.date_field :event_date, class: "form__input", required: true, enterkeyhint: "done", autocomplete: "off" %>
+    <%= tag.div class: "form__actions" do %>
+      <%= link_to "Cancel", countdown.new_record? ? [:countdowns] : countdown, class: "btn__cancel" %>
+      <%= f.submit class: "btn" %>
     <% end %>    
   <% end %>

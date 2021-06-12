@@ -1,6 +1,6 @@
-<%= render Pages::FormPageComponent.new do |p| %>
+<%= render PageComponent.new(is_narrow: true) do |p| %>
   <%= p.header(title: "New Countdown") %>
-  <%= p.form do %>
+  <%= p.section(id: "incomplete-countdowns", classes: ["page__section"]) do %>
     <%= render partial: "form", locals: { countdown: @countdown} %>
   <% end %>
 <% end %>
