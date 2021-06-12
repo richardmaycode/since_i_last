@@ -1,7 +1,7 @@
 <%= render PageComponent.new do |page| %>
   <% page.header(title: "My Countdowns") do |header| %>
     <% header.actions([
-      { name: "+ New", href: new_countdown_path }
+      { name: "Add", href: new_countdown_path }
     ])%>
   <% end %>
   <%= page.section(id: "incomplete-countdowns", classes: ["page__section"]) do %>

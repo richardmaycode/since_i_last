@@ -17,7 +17,7 @@ gem 'turbo-rails'
 gem 'faker'
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 gem "view_component", require: "view_component/engine"
-
+gem "stimulus-rails"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

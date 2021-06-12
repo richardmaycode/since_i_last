@@ -11,6 +11,19 @@
   </head>
 
   <body>
+    <%= tag.nav do %>
+      <%= tag.div class: "nav__bar" do %>
+        <%= tag.div class: "navbar__left" do %>
+          <%= link_to "Dashboard", "#" %>
+        <% end %>
+        <%= tag.div class: "navbar__center" do %>
+          <%= link_to "TimeRecord", "#" %>
+        <% end %>
+        <%= tag.div class: "navbar__right" do %>
+          <%= link_to "Me", "#" %>
+        <% end %>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
