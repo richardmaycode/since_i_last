@@ -1,2 +1,7 @@
-<h1>People#show</h1>
-<p>Find me in app/views/people/show.html.erb</p>
+<%= render PageComponent.new do |page| %>
+  <%= page.header(title: "Profile") %>
+  <%= page.section(id: "indices", classes: ["page__section"]) do %>
+    <%= link_to "Countdowns", countdowns_path %>
+    <%= link_to "Watches", watches_path %>
+  <% end %>
+<% end %>
