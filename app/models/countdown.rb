@@ -5,6 +5,7 @@ class Countdown < ApplicationRecord
   enum color: BG_COLORS
 
   # Associations
+  belongs_to :person
 
   # Validations
   validates :title, presence: true

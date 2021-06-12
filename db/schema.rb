@@ -20,15 +20,10 @@ ActiveRecord::Schema.define(version: 2021_06_09_161313) do
     t.string "icon"
     t.integer "color", null: false
     t.datetime "event_date", null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "goals", force: :cascade do |t|
-    t.integer "amount", default: 0, null: false
-    t.integer "goal_type", default: 0, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_countdowns_on_person_id"
   end
 
   create_table "outcomes", force: :cascade do |t|
@@ -42,6 +37,20 @@ ActiveRecord::Schema.define(version: 2021_06_09_161313) do
     t.index ["watch_id"], name: "index_outcomes_on_watch_id"
   end
 
+  create_table "people", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_people_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_people_on_reset_password_token", unique: true
+  end
+
   create_table "watches", force: :cascade do |t|
     t.string "title", null: false
     t.string "icon", default: "test", null: false
@@ -49,9 +58,13 @@ ActiveRecord::Schema.define(version: 2021_06_09_161313) do
     t.datetime "executed", null: false
     t.integer "goal", default: 0, null: false
     t.integer "goal_type", default: 0, null: false
+    t.bigint "person_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["person_id"], name: "index_watches_on_person_id"
   end
 
+  add_foreign_key "countdowns", "people"
   add_foreign_key "outcomes", "watches"
+  add_foreign_key "watches", "people"
 end

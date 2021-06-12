@@ -6,7 +6,7 @@ RSpec.describe Header::ActionComponent, type: :component do
     expect(
       render_inline(described_class.new(name: "Fancy", href: "test.com")) { }.css("a").to_html
     ).to include(
-      "<a href=\"test.com\">Fancy</a>"
+      "<a class=\"btn\" href=\"test.com\">Fancy</a>"
     )
   end
 end

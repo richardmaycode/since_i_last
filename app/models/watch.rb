@@ -6,6 +6,7 @@ class Watch < ApplicationRecord
   enum color: BG_COLORS
 
   # Relationships
+  belongs_to :person
   has_many :outcomes, dependent: :destroy
 
   # Validations

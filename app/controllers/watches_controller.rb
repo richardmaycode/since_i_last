@@ -1,18 +1,18 @@
 class WatchesController < ApplicationController
   before_action :set_watch, only: %w[show edit update destroy]
   def index
-    @watches = Watch.all
+    @watches = current_person.watches.all
   end
 
   def show
   end
 
   def new
-    @watch = Watch.new
+    @watch = current_person.watches.new
   end
 
   def create
-    @watch = Watch.create(watch_params)
+    @watch = current_person.watches.create(watch_params)
 
     if @watch.save
       redirect_to watches_path

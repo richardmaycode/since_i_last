@@ -8,6 +8,8 @@ class CreateWatches < ActiveRecord::Migration[6.1]
       t.integer :goal, null: false, default: 0
       t.integer :goal_type, null: false, default: 0
 
+      t.belongs_to :person, null: false, foreign_key: true
+
       t.timestamps
     end
   end

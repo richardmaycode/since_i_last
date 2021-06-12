@@ -6,6 +6,7 @@ class CreateCountdowns < ActiveRecord::Migration[6.1]
       t.integer :color, null: false
       t.datetime :event_date, null: false
 
+      t.belongs_to :person, null: false, foreign_key: true
       t.timestamps
     end
   end
