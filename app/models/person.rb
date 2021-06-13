@@ -6,4 +6,7 @@ class Person < ApplicationRecord
 
   has_many :watches, dependent: :destroy
   has_many :countdowns, dependent: :destroy
+
+  # Validations
+  validates :first_name, :last_name, presence: true
 end

@@ -1,0 +1,7 @@
+<% if errors.any? %>
+  <%= tag.ul do %>
+    <% errors.full_messages.each do |error| %>
+      <%= tag.li error %>
+    <% end %>
+  <% end %>
+<% end %>

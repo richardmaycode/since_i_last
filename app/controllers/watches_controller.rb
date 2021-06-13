@@ -1,4 +1,5 @@
 class WatchesController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_watch, only: %w[show edit update destroy]
   def index
     @watches = current_person.watches.all

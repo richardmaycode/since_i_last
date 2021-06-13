@@ -1,4 +1,5 @@
 class CountdownsController < ApplicationController
+  before_action :authenticate_person!
   before_action :set_countdown, only: %w[show edit update destroy]
   def index
     @countdowns = Countdown.all.order(:event_date)
